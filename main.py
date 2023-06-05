@@ -4,18 +4,22 @@ import pygame
 from sys import exit
 from random import randint, choice
 
-
+# Test
 class Obstacle(pygame.sprite.Sprite):
     def __init__(self, type):  # type indicated what TYPE of obstachle you would want to pass through
         super().__init__()
         if type == "fly":
-            fly_1 = pygame.image.load("/Users/princem/Desktop/UltimatePygameIntro-main/graphics/Fly/Fly1.png").convert_alpha()
-            fly_2 = pygame.image.load("/Users/princem/Desktop/UltimatePygameIntro-main/graphics/Fly/Fly2.png").convert_alpha()
+            fly_1 = pygame.image.load(
+                "/Users/princem/Desktop/UltimatePygameIntro-main/graphics/Fly/Fly1.png").convert_alpha()
+            fly_2 = pygame.image.load(
+                "/Users/princem/Desktop/UltimatePygameIntro-main/graphics/Fly/Fly2.png").convert_alpha()
             self.frames = [fly_1,fly_2]
             y_position = 210
         else:
-            snail_1 = pygame.image.load("/Users/princem/Desktop/UltimatePygameIntro-main/graphics/snail/snail1.png").convert_alpha()
-            snail_2 = pygame.image.load("/Users/princem/Desktop/UltimatePygameIntro-main/graphics/snail/snail2.png").convert_alpha()
+            snail_1 = pygame.image.load(
+                "/Users/princem/Desktop/UltimatePygameIntro-main/graphics/snail/snail1.png").convert_alpha()
+            snail_2 = pygame.image.load(
+                "/Users/princem/Desktop/UltimatePygameIntro-main/graphics/snail/snail2.png").convert_alpha()
             self.frames = [snail_1, snail_2]
             y_position = 300
         self.animation_index = 0
@@ -34,7 +38,7 @@ class Obstacle(pygame.sprite.Sprite):
         self.destroy()
 
     def destroy(self):
-        if self.rect.x  <= -100:
+        if self.rect.x <= -100:
             self.kill()
 
 
